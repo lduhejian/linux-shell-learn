@@ -34,6 +34,7 @@ extern const char *program_name;
 /* Set program_name, based on argv[0].
    argv0 must be a string allocated with indefinite extent, and must not be
    modified after this call.  */
+//TODO  这个名字是做什么用的 ? 
 extern void set_program_name (const char *argv0);
 
 #if ENABLE_RELOCATABLE

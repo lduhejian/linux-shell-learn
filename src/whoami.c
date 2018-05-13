@@ -63,7 +63,17 @@ main (int argc, char **argv)
   uid_t uid;
 
   initialize_main (&argc, &argv);
+
+  /****************************************************************************/
   set_program_name (argv[0]);
+  // argv 是什么？
+  // https://stackoverflow.com/questions/3024197/what-does-int-argc-char-argv-mean
+  // argv[0] 获取命令行的第一个参数
+
+  // TODO 为什么命令行第一个参数是程序的名称？
+
+  /****************************************************************************/
+
   setlocale (LC_ALL, "");
   bindtextdomain (PACKAGE, LOCALEDIR);
   textdomain (PACKAGE);
