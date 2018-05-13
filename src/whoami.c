@@ -70,7 +70,15 @@ main (int argc, char **argv)
   // https://stackoverflow.com/questions/3024197/what-does-int-argc-char-argv-mean
   // argv[0] 获取命令行的第一个参数
 
-  // TODO 为什么命令行第一个参数是程序的名称？
+  // 为什么命令行第一个参数是程序的名称？bash 会将命令传递给我们写的 main 函数
+  // 可能是运行环境的调用
+  // 运行环境在哪里？ 运行环境 bash
+  // linux bash 是怎么调起的二进制程序？ 通过 bash 调用。 bash 之后有机会再学习。
+  // makefile 的 config.h 的原理了解
+  // 学习了 makefile 基础知识 https://www.youtube.com/watch?v=E1_uuFWibuM https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install
+
+  // 怎么把程序跑起来，不能影响当前系统？
+  // 只要不 make install 就不会影响当前系统
 
   /****************************************************************************/
 
