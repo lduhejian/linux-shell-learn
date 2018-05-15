@@ -17,6 +17,14 @@
 ## -------------------- ##
 
 # Be more Bourne compatible
+
+# 学习了如何打日志调试 set -x ---- set +x  / bash -x *.sh
+# http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_02_03.html
+
+# export 有什么用？https://stackoverflow.com/questions/1158091/defining-a-variable-with-or-without-export
+# 使变量可见性提高 https://stackoverflow.com/questions/7328223/unix-export-command
+# 两个脚本之间也是不可见的
+set -x
 DUALCASE=1; export DUALCASE # for MKS sh
 if test -n "${ZSH_VERSION+set}" && (emulate sh) >/dev/null 2>&1; then :
   emulate sh
@@ -33,6 +41,7 @@ else
      ;;
 esac
 fi
+set +x
 
 
 as_nl='
@@ -105,6 +114,10 @@ IFS=$as_save_IFS
 
      ;;
 esac
+
+#怎么打印变量? echo "$变量名"
+#怎么断点调试？
+
 # We did not find ourselves, most probably we were run as `sh COMMAND'
 # in which case we are not to be found in the path.
 if test "x$as_myself" = x; then
@@ -59180,4 +59193,3 @@ if test -n "$ac_unrecognized_opts" && test "$enable_option_checking" != no; then
   { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
 $as_echo "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
 fi
-
