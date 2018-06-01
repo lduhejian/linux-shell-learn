@@ -53,6 +53,17 @@ as_echo=$as_echo$as_echo$as_echo$as_echo$as_echo
 as_echo=$as_echo$as_echo$as_echo$as_echo$as_echo$as_echo
 # Prefer a ksh shell builtin over an external printf program on Solaris,
 # but without wasting forks for bash or zsh.
+
+# test 是什么命令？ Checks file types and compares values
+# test -z : check string length is zero
+# 体会 test -z 的用法
+#if test -z ''
+#  then echo "haha"
+#else
+#  echo "hehe"
+#fi
+
+
 if test -z "$BASH_VERSION$ZSH_VERSION" \
     && (test "X`print -r -- $as_echo`" = "X$as_echo") 2>/dev/null; then
   as_echo='print -r --'
@@ -58304,6 +58315,8 @@ GNUmakefile=$GNUmakefile
 _ACEOF
 
 cat >>$CONFIG_STATUS <<\_ACEOF || ac_write_fail=1
+
+# 什么是 autoconf program ？他和 ./configure 有什么关系？
 
 # Handling of arguments.
 for ac_config_target in $ac_config_targets
