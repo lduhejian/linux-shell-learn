@@ -49,6 +49,24 @@
 #define CH_ATIME 1
 #define CH_MTIME 2
 
+/* 学习使用 gcc 调试程序 */
+
+/*
+  cc 是什么?
+  cc stands for "C compiler". On modern systems, cc is usually an alias to a program which can compile the C programming language, such as gcc or clang.
+  文档 https://www.computerhope.com/unix/ucc.htm
+
+  cc -Ilib  -c src/touch.c
+  lib: .h file 所在目录
+
+  cc 之后的 .o 文件是什么？怎么执行？
+
+  cc touch.o 出现以下错误
+  ld: symbol(s) not found for architecture x86_64
+  clang: error: linker command failed with exit code 1 (use -v to see invocation)
+  我没能通过 cc 或 gcc g++ 成功编译出可执行文件
+*/
+
 /* Which timestamps to change. */
 static int change_times;
 
