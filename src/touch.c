@@ -65,6 +65,28 @@
   ld: symbol(s) not found for architecture x86_64
   clang: error: linker command failed with exit code 1 (use -v to see invocation)
   我没能通过 cc 或 gcc g++ 成功编译出可执行文件
+
+  使用 ide 单独编译 touch.c ，没有成功
+
+  在 Makefile 中寻找使用 clang 编译的方法
+  怎么 debug makefile 呢？ 参见以下两个链接
+  https://stackoverflow.com/questions/54753/tool-for-debugging-makefiles
+  https://www.oreilly.com/openbook/make3/book/ch12.pdf
+  make -n > log
+  touch 执行文件怎么生成的呢？
+  log 中找到:
+  gcc   -g -O2   -o touch touch.o libver.a ../lib/libcoreutils.a  ../lib/libcoreutils.a
+  touch.o 又是怎么生成的呢？
+  log 中也找到的生成 touch.o 的命令:
+  gcc  -I. -I../lib  -I../lib    -g -O2 -MT touch.o -MD -MP -MF .deps/touch.Tpo -c -o touch.o touch.c
+
+  libcoreutils.a 是什么？
+
+  gdb 能调试 touch 吗？
+  安装 最新 gdb 8.1 失败。
+  mac 中使用的是 lldb
+  lldb 的视频教程: https://www.youtube.com/watch?v=3BkEOvI36Ds&t=14s
+  lldb touch => lib main => run => n ...  为什么我 debug 的是汇编代码？
 */
 
 /* Which timestamps to change. */
