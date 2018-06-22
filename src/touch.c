@@ -87,6 +87,9 @@
   mac 中使用的是 lldb
   lldb 的视频教程: https://www.youtube.com/watch?v=3BkEOvI36Ds&t=14s
   lldb touch => lib main => run => n ...  为什么我 debug 的是汇编代码？
+  gcc   -g -O2   -o touch touch.o libver.a ../lib/libcoreutils.a  ../lib/libcoreutils.a 编译出的 touch debug 时是 c 代码
+  gcc  -I. -I../lib  -I../lib    -g -O2 -MT touch.o -MD -MP -MF .deps/touch.Tpo -c -o touch.o touch.c 编译出的 touch debug 时是汇编代码
+  两条编译命令的区别，待究。。。
 */
 
 /* Which timestamps to change. */
