@@ -93,6 +93,8 @@
 
 
   探究 touch hejiantest 的之行过程
+  真正创建文件的代码是那几行？
+  在 fd-reopen.c 中
 */
 
 /* Which timestamps to change. */
@@ -365,6 +367,19 @@ main (int argc, char **argv)
           date_set = true;
           break;
 
+        /*
+        fr v: (int) c = <variable not available>
+        print c:
+          error: Couldn't materialize: couldn't get the value of variable c: variable not available
+          error: errored out in DoExecute, couldn't PrepareToExecuteJITExpression
+        TODO 真实的 TIME_OPTION 是什么？ fr v 和 print c 是有区别的！
+        TIME_OPTION 是枚举类型 CHAR_MAX + 1
+        TODO CHAR_MAX 又是什么？
+        TODO lldb 怎么打印枚举类型？
+
+
+
+        */
         case TIME_OPTION:	/* --time */
           change_times |= XARGMATCH ("--time", optarg,
                                      time_args, time_masks);
